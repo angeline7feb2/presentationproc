@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+
+<% if user_signed_in? %>
+
+    <p>
+      <strong>Tname:</strong>
+      <%= @presentationdetail.tname %>
+    </p>
+
+    <p>
+      <strong>Tdescription:</strong>
+      <%= @presentationdetail.tdescription %>
+    </p>
+
+    <p>
+      <strong>Fostudy:</strong>
+      <%= @presentationdetail.fostudy %>
+    </p>
+
+    <p>
+      <strong>Dtpresent:</strong>
+      <%= @presentationdetail.dtpresent %>
+    </p>
+
+    <p>
+      <strong>Prname:</strong>
+      <%= @presentationdetail.prname %>
+    </p>
+
+    <p>
+      <strong>Prdetails:</strong>
+      <%= @presentationdetail.prdetails %>
+    </p>
+
+    <p>
+      <strong>Typepresent:</strong>
+      <%= @presentationdetail.typepresent %>
+    </p>
+
+    <p>
+      <strong>Price:</strong>
+      <%= @presentationdetail.price %>
+    </p>
+
+    <p>
+      <strong>Presentation Link:</strong>
+      <% if @presentationdetail.pvoice == "none" %>
+          <% if (@presentationdetail.user_id == current_user.id) || (current_user.admin == true)  %>
+            <%= link_to "Upload Presentation Voice", presentationvoices_upload_path(:presenter_id => @presentationdetail.id) %>
+          <% else %>
+            <p>Presentation Link not yet uploaded. Check again at the time the presentation time starts :)</p>
+          <% end %>
+      <% else %>
+         <%= link_to "Start Presentation Voice", presentationvoices_index_path(:presenter_id => @presentationdetail.id) %>
+      <% end %>
+    </p>
+
+    <p>
+      <% if (@presentationdetail.user_id == current_user.id) || (current_user.admin == true)  %>
+            <%= link_to 'Edit', edit_presentationdetail_path(@presentationdetail) %> 
+      <% end %>
+
+        <%= link_to 'Back', presentationdetails_path %>
+    </p>
+
+<% else %>
+  <div class="blog-post-body">
+      <p><strong><%= link_to 'Sign In', new_user_session_path %></strong> to get more information regarding the knowledges being shared...</p>          
+  </div>
+   
+
+<% end %>

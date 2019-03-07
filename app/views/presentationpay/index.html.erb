@@ -1,0 +1,65 @@
+<% if notice %>
+  <aside id="notice"><%= notice %></aside>
+<% end %>
+
+
+
+	
+<div class="row">
+	<div class="col-md-8">
+		<article class="blog-post">
+
+			<div class="blog-post-body">
+
+		        <p>
+		          Welcome to world of  <strong>Knowledge Sharing</strong> Grab as much as you can and share your <strong>knowledge</strong> with others.
+		        </p>        
+		 	</div>
+
+
+			<div class="blog-post-image">
+		          <p>
+		            <%= image_tag('Knowledge-sharing.jpg') %>
+		          </p>
+		    </div>
+
+		</article>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-md-8">
+		<article class="blog-post">
+		 		<% if user_signed_in? %>
+
+					<div class="blog-post-body">
+						<p><strong><%= link_to 'View', presentationdetails_path %></strong> all the knowledges being shared...</p>          
+				 	</div>
+
+				<% else %>
+					<div class="blog-post-body">
+						<p><strong><%= link_to 'Sign In', new_user_session_path %></strong> to get more information regarding the knowledges being shared...</p>    
+				 	</div>
+
+			 	<% end %>
+
+			</article>
+	</div>
+
+</div>
+
+
+​
+
+	
+	            
+	             
+	      
+
+
+
+
+              
+           
+   

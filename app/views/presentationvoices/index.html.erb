@@ -1,0 +1,4 @@
+<a href="<%= @url %>"><%= @pid.pvoice %></a> - 
+         <% if (@pid.user_id == current_user.id) || (current_user.admin == true)  %>
+            <%= link_to "Delete",  "destroy/?voice=" + @pid.pvoice, :confirm => 'Are you sure you want to delete ' + @pid.pvoice + '?' %>
+         <% end %>

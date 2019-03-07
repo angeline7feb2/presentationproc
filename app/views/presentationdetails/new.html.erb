@@ -1,0 +1,14 @@
+<% if user_signed_in? %>
+	<h1>New Presentationdetail</h1>
+
+	<%= render 'form', presentationdetail: @presentationdetail %>
+
+	<%= link_to 'Back', presentationdetails_path %>
+
+<% else %>
+  <div class="blog-post-body">
+      <p><strong><%= link_to 'Sign In', new_user_session_path %></strong> to get more information regarding the knowledges being shared...</p>          
+  </div>
+
+
+<% end %>

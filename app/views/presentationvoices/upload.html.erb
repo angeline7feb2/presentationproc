@@ -1,0 +1,8 @@
+
+
+<h2>Upload a new Presentation Voice:</h2>
+<%= form_tag presentationvoices_upload_path, :method => "post", :multipart => true do %>
+    <%= file_field_tag "voiceupload" %>
+    <%= hidden_field_tag(:presenter_id, params[:presenter_id]) %>
+    <%= submit_tag "Upload" %>
+<% end %>

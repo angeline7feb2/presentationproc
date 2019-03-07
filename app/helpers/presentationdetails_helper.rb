@@ -1,0 +1,2 @@
+module PresentationdetailsHelper
+end

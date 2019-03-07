@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tname: MyString
+  tdescription: MyText
+  fostudy: MyString
+  dtpresent: 2019-02-15 23:11:20
+  prname: MyString
+  prdetails: MyText
+  typepresent: MyString
+  price: 9.99
+
+two:
+  tname: MyString
+  tdescription: MyText
+  fostudy: MyString
+  dtpresent: 2019-02-15 23:11:20
+  prname: MyString
+  prdetails: MyText
+  typepresent: MyString
+  price: 9.99

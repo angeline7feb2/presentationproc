@@ -1,0 +1,68 @@
+<% if notice %>
+  <aside id="notice"><%= notice %></aside>
+<% end %>
+
+<% if user_signed_in? %>
+
+      <h4>Presentation Details</h4>
+
+      <table>
+        <tfoot>
+          <tr>
+            <td>
+              <div class="blog-post-image">
+                <h5><%= link_to 'Create New Presentation', new_presentationdetail_path %></h5>
+              </div>
+            </td>
+            
+          </tr>
+        </tfoot>
+        <tbody>
+          <% @presentationdetails.each do |presentationdetail| %>
+            <tr>
+              <div class="row">
+                <div class="col-md-8">
+                  <article class="blog-post">
+                    
+                 <div class="blog-post-image">
+                  <% if (presentationdetail.user_id == current_user.id) || (current_user.admin == true)  %>
+                    <p>
+                      <%= link_to 'Edit', edit_presentationdetail_path(presentationdetail) %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Destroy', presentationdetail, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </p>
+                  <% end %>
+                    <p>
+                      <%= link_to 'Show', presentationdetail %> &nbsp;&nbsp;&nbsp;&nbsp;
+                    </p>
+                </div>
+                  <div class="blog-post-body">
+
+                      <p>
+                        <h6><%= presentationdetail.tname %></h6>
+                        <%= presentationdetail.tdescription %><br />
+                        <strong>Field Of Study: </strong> <%= presentationdetail.fostudy %>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Timings: </strong><%= presentationdetail.dtpresent %><br />
+                        <strong>Presenter: </strong><%= presentationdetail.prname %><br />
+                        <%= presentationdetail.prdetails %><br />
+                        <strong>Presetation Type: </strong><%= presentationdetail.typepresent %>&nbsp;&nbsp;&nbsp;&nbsp; <strong>Price: </strong><%= presentationdetail.price %><b>$</b>
+                      </p>
+                      
+                  </div>
+                   
+            
+                 </article>
+              </div>
+                </div>
+
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+<% else %>
+  <div class="blog-post-body">
+      <p><strong><%= link_to 'Sign In', new_user_session_path %></strong> to get more information regarding the knowledges being shared...</p>          
+  </div>
+
+<% end %>
+

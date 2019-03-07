@@ -1,0 +1,59 @@
+<%= form_with(model: presentationdetail, local: true) do |form| %>
+  <% if presentationdetail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(presentationdetail.errors.count, "error") %> prohibited this presentationdetail from being saved:</h2>
+
+      <ul>
+      <% presentationdetail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tname, "Topic Name" %>
+    <%= form.text_field :tname, ​id: :presentationdetail_tname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tdescription, "Topic Description" %>
+    <%= form.text_area :tdescription, id: :presentationdetail_tdescription, rows: 10, cols: 60 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fostudy, "Field Of Study" %>
+    <%= form.text_field :fostudy, id: :presentationdetail_fostudy %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dtpresent, "Date and Time" %>
+    <%= form.datetime_select :dtpresent, id: :presentationdetail_dtpresent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prname, "Presenter Name" %>
+    <%= form.text_field :prname, id: :presentationdetail_prname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prdetails, "Presenter Details" %>
+    <%= form.text_area :prdetails, id: :presentationdetail_predetails, rows: 10, cols: 60 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :typepresent, "Presentation Type" %>
+    <%= form.radio_button :typepresent, 'Free', id: :presentationdetail_typepresent, :checked => true %>Free
+    <%= form.radio_button :typepresent, 'Student', id: :presentationdetail_typepresent, :checked => false %>Student
+    <%= form.radio_button :typepresent, 'Professional', id: :presentationdetail_typepresent, :checked => false %>Professional
+  </div>
+
+  <div class="field">
+    <%= form.label :price, "Cost" %>
+    <%= form.text_field :price,:value => 0.0, id: :presentationdetail_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
