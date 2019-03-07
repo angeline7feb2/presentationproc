@@ -51,7 +51,11 @@
             <p>Presentation Link not yet uploaded. Check again at the time the presentation time starts :)</p>
           <% end %>
       <% else %>
-         <%= link_to "Start Presentation Voice", presentationvoices_index_path(:presenter_id => @presentationdetail.id) %>
+          <% if (@presentationdetail.dtpresent.to_time == Time.now) %>
+            <%= link_to "Start Presentation Voice", presentationvoices_index_path(:presenter_id => @presentationdetail.id) %>
+          <% else %>
+            <p>Sorry the link is closed! Please come again at the presentation timings <%= @presentationdetail.dtpresent.to_time %> and check the link to access :)</p>
+          <% end %>
       <% end %>
     </p>
 
