@@ -8,11 +8,15 @@ gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
 gem 'devise', '~> 4.2'
 #Devise Gem for authentication of the user
-gem 'sqlite3', '~> 1.3.6'
+gem 'sqlite3', '~> 1.3.6', group: [:development, :test]
 # Use Puma as the app server
 gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
 
 gem 'puma', '~> 3.11'
+
+gem 'rails_12factor', '~> 0.0.3', group: :production
+gem 'pg', '~> 1.1', '>= 1.1.4', group: :production
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
