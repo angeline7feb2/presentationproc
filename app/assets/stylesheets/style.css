@@ -54,10 +54,11 @@ section:last-child {
 	padding-bottom: 0px;
 }
 /*- Reset bootstrap -*/
-@media (min-width: 1200px)
-/*.container {
+/*@media (min-width: 1200px)*/
+.container {
 	width: 1260px;
-}*/
+}
+
 .row-gutter {
 	margin-left: -20px;
 	margin-right: -20px;
