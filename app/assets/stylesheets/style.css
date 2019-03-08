@@ -55,9 +55,9 @@ section:last-child {
 }
 /*- Reset bootstrap -*/
 @media (min-width: 1200px)
-.container {
+/*.container {
 	width: 1260px;
-}
+}*/
 .row-gutter {
 	margin-left: -20px;
 	margin-right: -20px;
